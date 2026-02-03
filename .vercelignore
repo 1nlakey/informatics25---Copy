@@ -3,3 +3,5 @@ db/
 *.log
 node_modules/
 README.md
+api/*
+!api/server.js
