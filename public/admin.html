@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Admin Absensi</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="card">
+        <h1>Panel Admin</h1>
+        <p>Gunakan halaman ini untuk membuka form pesan & kesan dan set jawaban kuis.</p>
+      </header>
+
+      <section class="card">
+        <h2>Kontrol Form Pesan & Kesan</h2>
+        <div id="unlock-status" class="muted"></div>
+        <button id="unlock-btn">Buka Form Pesan & Kesan</button>
+        <button id="lock-btn">Tutup Form Pesan & Kesan</button>
+      </section>
+
+      <section class="card">
+        <h2>Jawaban Kuis</h2>
+        <form id="answer-form">
+          <label>
+            Jawaban Benar
+            <input type="text" name="answer" />
+          </label>
+          <button type="submit">Simpan Jawaban</button>
+          <p class="status" id="answer-status"></p>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>Pemenang Kuis</h2>
+        <div id="winner-view" class="list"></div>
+        <button id="refresh-winner">Muat Ulang Pemenang</button>
+      </section>
+
+      <section class="card">
+        <h2>Data Absensi</h2>
+        <div class="controls">
+          <label>
+            Urutkan
+            <select id="attendance-sort">
+              <option value="id_desc">ID Terbaru</option>
+              <option value="id_asc">ID Terlama</option>
+              <option value="name_asc">Nama A-Z</option>
+              <option value="name_desc">Nama Z-A</option>
+              <option value="time_desc">Waktu Terbaru</option>
+              <option value="time_asc">Waktu Terlama</option>
+            </select>
+          </label>
+          <button id="refresh-attendance">Muat Ulang</button>
+          <button id="export-csv">Export CSV</button>
+          <button id="export-xls">Export Excel</button>
+          <button id="delete-attendance" class="danger">Hapus Terpilih</button>
+        </div>
+        <div class="table-wrap">
+          <table class="table" id="attendance-table">
+            <thead>
+              <tr>
+                <th class="cell-center"><input type="checkbox" id="attendance-select-all" /></th>
+                <th>ID</th>
+                <th>Nama</th>
+                <th>Timestamp</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Data Kuis</h2>
+        <div class="controls">
+          <button id="refresh-quiz">Muat Ulang</button>
+          <button id="delete-quiz" class="danger">Hapus Terpilih</button>
+        </div>
+        <div class="table-wrap">
+          <table class="table" id="quiz-table">
+            <thead>
+              <tr>
+                <th class="cell-center"><input type="checkbox" id="quiz-select-all" /></th>
+                <th>ID</th>
+                <th>Nama</th>
+                <th>Jawaban</th>
+                <th>Timestamp</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Pesan & Kesan</h2>
+        <div class="controls">
+          <button id="refresh-messages-admin">Muat Ulang</button>
+          <button id="delete-messages" class="danger">Hapus Terpilih</button>
+        </div>
+        <div class="table-wrap">
+          <table class="table" id="messages-table">
+            <thead>
+              <tr>
+                <th class="cell-center"><input type="checkbox" id="messages-select-all" /></th>
+                <th>ID</th>
+                <th>Nama</th>
+                <th>Pesan</th>
+                <th>Timestamp</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="/admin.js"></script>
+  </body>
+</html>

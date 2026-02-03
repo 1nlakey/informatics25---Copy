@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Absensi & Kuis Ramadhan</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="card" id="intro-card">
+        <h1>Absensi & Kuis Ramadhan</h1>
+        <p>Silakan isi absensi terlebih dahulu. Form lain akan muncul setelah absensi terkirim.</p>
+      </header>
+
+      <section class="card" id="attendance-section">
+        <h2>Absensi</h2>
+        <form id="attendance-form">
+          <label>
+            Nama
+            <input type="text" name="name" required />
+          </label>
+          <button type="submit">Kirim Absensi</button>
+          <p class="status" id="attendance-status"></p>
+        </form>
+      </section>
+
+      <section class="card hidden" id="quiz-section">
+        <h2>Kuis</h2>
+        <form id="quiz-form">
+          <label>
+            Nama
+            <input type="text" name="name" required />
+          </label>
+          <label>
+            Jawaban
+            <input type="text" name="answer" required />
+          </label>
+          <button type="submit">Kirim Jawaban</button>
+          <p class="status" id="quiz-status"></p>
+        </form>
+      </section>
+
+      <section class="card hidden" id="message-card">
+        <h2>Pesan & Kesan</h2>
+        <div id="message-locked" class="muted">
+          Form ini akan muncul saat sudah dibuka admin.
+        </div>
+        <form id="message-form" class="hidden">
+          <label>
+            Nama
+            <input type="text" name="name" />
+          </label>
+          <label>
+            Pesan dan Kesan
+            <textarea name="message" rows="4"></textarea>
+          </label>
+          <button type="submit">Kirim Pesan</button>
+          <p class="status" id="message-status"></p>
+        </form>
+      </section>
+
+      <section class="card hidden" id="message-list-section">
+        <h2>Daftar Pesan & Kesan</h2>
+        <div id="message-list" class="list"></div>
+        <button id="refresh-messages">Muat Ulang Pesan</button>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
